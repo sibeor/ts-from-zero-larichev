@@ -1,28 +1,10 @@
-let revenue: number = 1000;
-let bonus: number = 500;
+const skills: string[] = ['Dev', 'DevOps', 'Testing'];
 
-let res: number = revenue + bonus;
+for (const skill of skills) {
+    console.log(skill.toLowerCase())
+}
+const res = skills
+    .filter(s => s !== 'DevOps')
+    .map(skill => skill.toUpperCase() + '!')
+    .reduce((a,b) => a + b );
 console.log(res)
-
-function getFullName(userEntity: {firstname: string, surname: string}): string {
-    return `${userEntity.firstname} ${userEntity.surname}`;
-}
-
-const user = {
-    firstname: 'Ivan',
-    surname: 'Ivanov',
-    city: 'Moscow',
-    age: 33
-}
-console.log(getFullName(user))
-let info: {
-    officeId: number,
-    isOpened: boolean,
-    contacts: {
-        phone: string,
-        email: string,
-        address: {
-            city: string,
-        }
-    }
-}
