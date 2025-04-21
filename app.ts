@@ -4,10 +4,25 @@ let bonus: number = 500;
 let res: number = revenue + bonus;
 console.log(res)
 
-function getFullName(firstName: string, lastName: string): string {
-    return `${firstName} ${lastName}`;
+function getFullName(userEntity: {firstname: string, surname: string}): string {
+    return `${userEntity.firstname} ${userEntity.surname}`;
 }
 
-const getFullNameArrow = (firstName: string, lastName: string): string => {
-    return `${firstName} ${lastName}`;
+const user = {
+    firstname: 'Ivan',
+    surname: 'Ivanov',
+    city: 'Moscow',
+    age: 33
+}
+console.log(getFullName(user))
+let info: {
+    officeId: number,
+    isOpened: boolean,
+    contacts: {
+        phone: string,
+        email: string,
+        address: {
+            city: string,
+        }
+    }
 }
